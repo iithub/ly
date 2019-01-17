@@ -106,7 +106,7 @@
             }
             ];
             function update() {
-                $.post("http://ad.subinwechat.com/user/update_ticket", {
+                $.post("https://ad.subinwechat.com/user/update_ticket", {
                     appid: appid,
                     openId: openId,
                     ticket: $("#ticket").val()
@@ -121,7 +121,7 @@
                         entry = resj.Entry;
                         ticket = resj.Ticket;
                         quitTime = resj.QuitTime;
-						$("#result").html("Seq:" + seq + "<br>Ticket:" + ticket + "<br>Time:" + time + "<br>Entry:" + entry + "<br>QuitTime:" + quitTime + "<hr>" + $("#result").html());
+			$("#result").html("Seq:" + seq + "<br>Ticket:" + ticket + "<br>Time:" + time + "<br>Entry:" + entry + "<br>QuitTime:" + quitTime + "<hr>" + $("#result").html());
                     }
                 });
             };
@@ -158,7 +158,7 @@
                     openId = ids[i].openId;
                     thirdOpenId = ids[i].thirdOpenId;
                     telNo = ids[i].telNo;
-                    $.post("http://ad.subinwechat.com/user/get_user_coupon_use", {
+                    $.post("https://ad.subinwechat.com/user/get_user_coupon_use", {
                         openId: openId,
                         thirdOpenId: thirdOpenId,
                         nr: 1,
@@ -193,7 +193,7 @@
             }
             $(document).on("pageinit",
             function() {
-				$("input[type='checkbox']").attr("checked",true).checkboxradio("refresh");
+		$("input[type='checkbox']").attr("checked",true).checkboxradio("refresh");
             });
             var tryId = 1;
             var hasCoupon = false;
@@ -208,7 +208,7 @@
             var thirdOpenId;
             var chooseCouponId;
             var appid = "wxd396e26e8729f0d1";
-		</script>
+	</script>
     </head>
     
     <body>
